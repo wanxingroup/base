@@ -1,0 +1,16 @@
+stages:
+  - test
+
+test:
+  stage: test
+  variables:
+    MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+  services:
+    - mysql:5.7
+    - redis:6-alpine
+  image: dev-reg.wanxingrowth.com/util/gobuilder:1.13
+  script:
+    - |
+      cp ${GITLAB_KEY} ~/.ssh/id_rsa
+      chmod 0400 ~/.ssh/id_rsa
+      make test

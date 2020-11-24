@@ -1,0 +1,10 @@
+{
+  "web": {
+    "enable": true,
+    "ip": "127.0.0.1",
+    "port": 8080,
+    "mode": "debug",
+    "readWriteTimeout": "60s",
+    "logMode": true
+  }
+}
